@@ -1,0 +1,18 @@
+{
+  "window.title": "Dev Flow • Next14.5",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.addMissingImports": true
+  },
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#03698e",
+    "titleBar.activeForeground": "#EFFEF3"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }
+}
