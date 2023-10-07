@@ -2,27 +2,31 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 interface ThmeContextType {
-  mode: "light" | "dark";
-  setMode: React.Dispatch<React.SetStateAction<"light" | "dark">>;
+  mode: string;
+  setMode: React.Dispatch<React.SetStateAction<string>>;
 }
 const ThemeContext = createContext<ThmeContextType | undefined>(undefined);
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [mode, setMode] = useState<"light" | "dark">("light");
+  const [mode, setMode] = useState<string>("light");
 
   // eslint-disable-next-line no-unused-vars
   const handleThemeChange = () => {
-    if (mode === "dark") {
-      setMode("light");
-      document.documentElement.classList.add("light");
-    } else {
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
       setMode("dark");
       document.documentElement.classList.add("dark");
+    } else {
+      setMode("light");
+      document.documentElement.classList.remove("dark");
     }
   };
 
   useEffect(() => {
-    // handleThemeChange();
+    handleThemeChange();
   }, [mode]);
 
   return (
