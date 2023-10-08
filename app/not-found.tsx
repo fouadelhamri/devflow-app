@@ -16,7 +16,8 @@ const NotFound = () => {
             href="/"
             className="primary-gradient rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 "
           >
-            Go back home
+            <span className="max-sm:hidden">Bring me back home </span>
+            <span className="sm:hidden">Home</span>
           </a>
         </div>
       </div>
