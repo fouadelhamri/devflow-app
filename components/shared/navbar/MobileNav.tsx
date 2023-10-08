@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/sheet";
 import Image from "next/image";
 import Link from "next/link";
-import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { SignedOut } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { sidebarLinks } from "@/constants";
 import { usePathname } from "next/navigation";
@@ -19,8 +19,11 @@ const NavContent = () => {
     <section className="flex h-full flex-col gap-6 pt-16">
       {sidebarLinks.map((item) => {
         const isActive =
-          (pathname.includes(item.route) && item.route.length > 0) ||
-          pathname === item.route;
+          (item.route === "/" && pathname === "/") ||
+          (item.route !== "/" &&
+            pathname.includes(item.route) &&
+            item.route.length > 0);
+
         return (
           <SheetClose asChild key={item.route}>
             <Link
@@ -52,7 +55,7 @@ const NavContent = () => {
 const MobileNav = () => {
   return (
     <Sheet>
-      <SheetTrigger>
+      <SheetTrigger className="lg:hidden">
         <Image
           src="/assets/icons/hamburger.svg"
           alt="menu"
@@ -98,17 +101,6 @@ const MobileNav = () => {
               </SheetClose>
             </div>
           </SignedOut>
-          <SignedIn>
-            <div className="flex flex-col gap-3 ">
-              <SheetClose asChild>
-                <Link href="/">
-                  <Button className="small-medium light-border-2 btn-tertiary text-dark400_light900 min-h-[40px] w-full rounded-lg px-4 py-3 shadow-none">
-                    Sign Out
-                  </Button>
-                </Link>
-              </SheetClose>
-            </div>
-          </SignedIn>
         </div>
       </SheetContent>
     </Sheet>
