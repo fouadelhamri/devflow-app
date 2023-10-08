@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 import Theme from "./Theme";
 import MobileNav from "./MobileNav";
-import GlobalSearch from "@/components/search/GlobalSearch";
+import GlobalSearch from "@/components/shared/search/GlobalSearch";
 
 const Navbar = () => {
   return (
