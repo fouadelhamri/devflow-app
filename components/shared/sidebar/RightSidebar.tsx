@@ -3,11 +3,11 @@ import Link from "next/link";
 import React from "react";
 import TagItem from "../TagItem";
 const popularTags = [
-  { _id: 1, name: "Javascript", totalQuestions: 4 },
-  { _id: 2, name: "React", totalQuestions: 4 },
-  { _id: 4, name: "Next", totalQuestions: 4 },
-  { _id: 3, name: "Firebase", totalQuestions: 4 },
-  { _id: 5, name: "React Native", totalQuestions: 1 },
+  { _id: "1", name: "Javascript", totalQuestions: 4 },
+  { _id: "2", name: "React", totalQuestions: 4 },
+  { _id: "4", name: "Next", totalQuestions: 4 },
+  { _id: "3", name: "Firebase", totalQuestions: 4 },
+  { _id: "5", name: "React Native", totalQuestions: 1 },
 ];
 const hotQuestions = [
   {
