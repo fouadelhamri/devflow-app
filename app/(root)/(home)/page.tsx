@@ -5,36 +5,11 @@ import LocalSearchBar from "@/components/shared/search/LocalSearchBar";
 import NoResult from "@/components/shared/skeleton/NoResult";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filters";
+import { getQuestions } from "@/lib/actions/question.action";
 import Link from "next/link";
-const questions = [
-  {
-    _id: "1", // Changed to a string
-    title: "Cascading Deletes in Sql Scheme ?",
-    tags: [
-      { _id: "1", name: "python" }, // Changed to string
-      { _id: "2", name: "sql" }, // Changed to string
-    ],
-    author: { _id: "1", name: "John Doe", picture: "john-doe.jpg" }, // Changed to an object
-    upvotes: 33,
-    views: 193030,
-    answers: [], // Initialize as an empty array since it's an array of objects
-    createdAt: new Date("2021-04-04T12:00:00.000Z"), // Converted to a Date object
-  },
-  {
-    _id: "2", // Changed to a string
-    title: "How to center a div?",
-    tags: [{ _id: "3", name: "css" }], // Changed to string
-    author: { _id: "2", name: "Jane Smith", picture: "jane-smith.jpg" }, // Changed to an object
-    upvotes: 4503, // Example values
-    views: 120, // Example values
-    answers: [], // Initialize as an empty array since it's an array of objects
-    createdAt: new Date("2023-10-04T13:00:00.000Z"), // Example date
-  },
-];
 
-// Now, the 'questions' array conforms to the 'QuestionProps' interface.
-
-export default function Home() {
+export default async function Home() {
+  const { questions } = await getQuestions({});
   return (
     <>
       <div className="sm-items-center flex w-full flex-col-reverse justify-between gap-4 sm:flex-row">
