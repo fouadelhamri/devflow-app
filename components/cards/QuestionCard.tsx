@@ -37,7 +37,7 @@ const QuestionCard = (props: QuestionProps) => {
       </div>
       <div className="flex-between mt-5 flex w-full flex-wrap gap-3">
         <Metric
-          imgUrl={"assets/icons/avatar.svg"}
+          imgUrl={props.author.picture ?? "assets/icons/avatar.svg"}
           alt={"user-icon"}
           value={props.author.name}
           href={`/profile/${props.author._id}`}
