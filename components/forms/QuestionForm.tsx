@@ -134,7 +134,8 @@ const Question = ({ mongoUserId }: Props) => {
                 />
               </FormControl>
               <FormDescription className="body-regular mt-2.5 text-light-500">
-                Be specific and image you&apos;re asking a question to a person
+                Be specific and imagine you&apos;re asking a question to a
+                person
               </FormDescription>
               <FormMessage className="text-red-500" />
             </FormItem>
@@ -158,7 +159,7 @@ const Question = ({ mongoUserId }: Props) => {
                   }}
                   onBlur={field.onBlur}
                   onEditorChange={(content) => field.onChange(content)}
-                  initialValue="<p>This is the initial content of the editor.</p>"
+                  initialValue="<p>Describe your issue...</p>"
                   init={{
                     height: 350,
                     menubar: false,
